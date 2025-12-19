@@ -5,6 +5,7 @@ defineOptions({ name: 'MainHeader' })
 <template>
   <header class="cinematic-header">
     <nav>
+      <img src="@/assets/img/logo.png" alt="logo" class="logo"/>
       <router-link to="/">Accueil</router-link>
       <router-link to="/cv">CV</router-link>
       <router-link to="/projets">Projets</router-link>
@@ -28,6 +29,7 @@ defineOptions({ name: 'MainHeader' })
 
 nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -36,6 +38,7 @@ a {
   text-decoration: none;
   position: relative;
   font-weight: 500;
+  font-size: 1.5rem;
 }
 
 a::after {
@@ -51,6 +54,10 @@ a::after {
 
 a:hover::after {
   width: 100%;
+}
+
+nav img{
+  width: 5%;
 }
 </style>
 
