@@ -3,7 +3,6 @@ defineOptions({
   name: 'HomeView'
 })
 import { useRouter } from 'vue-router'
-// Import direct de l'image pour garantir que le chemin est trouvé par le projet
 import backgroundUrl from '@/assets/img/fondFinal.png'
 
 const router = useRouter()
@@ -55,17 +54,17 @@ function goToProjects() {
       <div class="cards">
         <div class="card">
           <h3>Baccalauréat</h3>
-          <p>Baccalauréat général avec mention. Découverte de l’informatique et des bases de la programmation au Lycée Jean Moulin.</p>
+          <p>Baccalauréat général avec mention au Lycée Jean Moulin. Découverte de l’algorithmique et des bases du code.</p>
         </div>
 
         <div class="card">
           <h3>BUT Informatique</h3>
-          <p>Formation à l'IUT de Montpellier axée sur le développement, les systèmes et le travail en équipe. Réalisation de projets SAÉ.</p>
+          <p>IUT de Montpellier-Sète. Spécialisation en développement web et bases de données. Validation intégrale de la 1ère année.</p>
         </div>
 
         <div class="card">
           <h3>Projet professionnel</h3>
-          <p>Objectif : devenir développeuse d’applications. Poursuite d'études en alternance pour allier théorie et pratique.</p>
+          <p>Objectif : Master IMAGINE pour lier informatique et jeux vidéos, avec l'ambition de créer une entreprise d'Escape Games technologiques.</p>
         </div>
       </div>
     </section>
@@ -75,41 +74,79 @@ function goToProjects() {
 
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Techniques</h3>
-          <div class="skill-group">
-            <div class="skill">
-              <div class="skill-info"><span>HTML / CSS</span><span>80%</span></div>
-              <div class="bar"><div class="level" style="width: 80%"></div></div>
-            </div>
-            <div class="skill">
-              <div class="skill-info"><span>JavaScript</span><span>65%</span></div>
-              <div class="bar"><div class="level" style="width: 65%"></div></div>
+          <h3>Techniques & Langages</h3>
+
+          <div class="skill-family">
+            <h4>Web</h4>
+            <div class="tags-container">
+              <span class="tag">HTML5 / CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Vue.js</span>
             </div>
           </div>
-          <div class="tags-container">
-            <span class="tag">Vue.js</span>
-            <span class="tag">Git</span>
-            <span class="tag">SQL</span>
-            <span class="tag">PHP</span>
+
+          <div class="skill-family">
+            <h4>Programmation</h4>
+            <div class="tags-container">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">C / C++</span>
+            </div>
+          </div>
+
+          <div class="skill-family">
+            <h4>Bases de données</h4>
+            <div class="tags-container">
+              <span class="tag">SQL</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">phpMyAdmin</span>
+            </div>
+          </div>
+
+          <div class="skill-family">
+            <h4>Outils & Méthodes</h4>
+            <div class="tags-container">
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">Figma</span>
+              <span class="tag">SCRUM</span>
+              <span class="tag">VS Code</span>
+            </div>
           </div>
         </div>
 
         <div class="skill-card">
-          <h3>Humaines</h3>
-          <div class="skill-group">
-            <div class="skill">
-              <div class="skill-info"><span>Travail d’équipe</span><span>85%</span></div>
-              <div class="bar"><div class="level" style="width: 85%"></div></div>
-            </div>
-            <div class="skill">
-              <div class="skill-info"><span>Communication</span><span>70%</span></div>
-              <div class="bar"><div class="level" style="width: 70%"></div></div>
+          <h3>Soft Skills</h3>
+
+          <div class="skill-family">
+            <h4>Expériences sociales</h4>
+            <div class="tags-container">
+              <span class="tag">Tutorat (Certifiée)</span>
+              <span class="tag">Ambassadrice IUT</span>
+              <span class="tag">Bénévolat informatique</span>
             </div>
           </div>
-          <div class="tags-container">
-            <span class="tag">Autonomie</span>
-            <span class="tag">Organisation</span>
-            <span class="tag">Rigueur</span>
+
+          <div class="skill-family">
+            <h4>Savoir-être</h4>
+            <div class="tags-container">
+              <span class="tag">Esprit d'équipe</span>
+              <span class="tag">Rigueur</span>
+              <span class="tag">Sens du service</span>
+              <span class="tag">Adaptabilité</span>
+              <span class="tag">Autonomie</span>
+              <span class="tag">Organisation</span>
+            </div>
+          </div>
+
+          <div class="skill-family">
+            <h4>Langues</h4>
+            <div class="tags-container">
+              <span class="tag">Anglais</span>
+              <span class="tag">Espagnol</span>
+            </div>
           </div>
         </div>
       </div>
@@ -128,25 +165,23 @@ function goToProjects() {
 .home-page {
   position: relative;
   color: white;
-  background: transparent; /* Fond transparent pour voir le fixed-background */
+  background: transparent;
 }
 
-/* FOND FIXE GLOBAL */
 .fixed-background {
   position: fixed;
   inset: 0;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  z-index: -2; /* Derrière tout le contenu */
+  z-index: -2;
 }
 
-/* Overlay sombre pour la lisibilité */
 .fixed-background::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(5, 5, 15, 0.6); /* Ajuste l'opacité ici si c'est trop sombre */
+  background: rgba(5, 5, 15, 0.65);
 }
 
 .section-spacing {
@@ -162,7 +197,6 @@ function goToProjects() {
   letter-spacing: 4px;
 }
 
-/* HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -208,7 +242,6 @@ function goToProjects() {
   flex-wrap: wrap;
 }
 
-/* BOUTONS STYLE SPACE */
 .btn {
   padding: 0.9rem 2.2rem;
   border-radius: 50px;
@@ -230,7 +263,6 @@ function goToProjects() {
   color: #7dd3fc;
 }
 
-/* CARTES GLASSMORPHISME */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -251,11 +283,11 @@ function goToProjects() {
   border-color: #7dd3fc;
 }
 
-/* SKILLS */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 3rem;
+  align-items: start;
 }
 
 .skill-card {
@@ -266,35 +298,48 @@ function goToProjects() {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.skill-info { display: flex; justify-content: space-between; margin-bottom: 0.8rem; }
-.bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
+.skill-card h3 {
+  color: #7dd3fc;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+  padding-bottom: 1rem;
 }
 
-.level {
-  height: 100%;
-  background: linear-gradient(90deg, #38bdf8, #7dd3fc);
+.skill-family {
+  margin-bottom: 2rem;
+}
+
+.skill-family h4 {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 2rem;
 }
 
 .tag {
   background: rgba(125, 211, 252, 0.1);
   border: 1px solid rgba(125, 211, 252, 0.3);
-  padding: 0.4rem 1rem;
-  border-radius: 15px;
-  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  transition: all 0.3s ease;
 }
 
-/* CTA */
+.tag:hover {
+  background: rgba(125, 211, 252, 0.2);
+  transform: scale(1.05);
+  border-color: #7dd3fc;
+}
+
 .projects-cta {
   padding: 10rem 2rem;
   text-align: center;
