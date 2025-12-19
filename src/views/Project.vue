@@ -35,9 +35,9 @@ const projects = {
     methods: ['Agile Scrum', 'Architecture MVC', 'Git / GitHub', 'PHP & SQL'],
     results: `Plateforme avec authentification, vérification par email et deux systèmes de vote innovants (Jugement majoritaire et Vote australien).`,
     skills: [
-      { name: 'Développement Web PHP', level: 85 },
-      { name: 'Gestion de Projet (Scrum)', level: 80 },
-      { name: 'Architecture logicielle', level: 80 }
+      { name: 'Développement Web PHP', level: 90 },
+      { name: 'Gestion de Projet (Scrum)', level: 95 },
+      { name: 'Architecture logicielle', level: 85 }
     ],
     contribution: `Développement de la logique métier (40% du code), gestion de l'authentification et rôle de Scrum Master sur la majorité des sprints.`,
     background: projet1Bg,
@@ -50,9 +50,9 @@ const projects = {
     methods: ['Java', 'JavaFX', 'POO avancée', 'Git', 'Binôme'],
     results: `Jeu fonctionnel avec gestion des dégâts, des énergies et une interface interactive documentée.`,
     skills: [
-      { name: 'Programmation Java', level: 85 },
+      { name: 'Programmation Java', level: 90 },
       { name: 'Conception UI (JavaFX)', level: 80 },
-      { name: 'Logique Algorithmique', level: 75 }
+      { name: 'Logique Algorithmique', level: 90 }
     ],
     contribution: `Architecture générale de l'application, implémentation des règles du jeu et création des composants graphiques.`,
     background: projet2Bg,
@@ -66,8 +66,8 @@ const projects = {
     results: `Base de données optimisée, sans redondance, capable de répondre à des requêtes complexes de statistiques.`,
     skills: [
       { name: 'Modélisation (MCD/MLD)', level: 90 },
-      { name: 'Langage SQL', level: 85 },
-      { name: 'Rigueur Analytique', level: 80 }
+      { name: 'Langage SQL', level: 95 },
+      { name: 'Rigueur Analytique', level: 90 }
     ],
     contribution: `Réalisation de l'intégralité du schéma relationnel, écriture des scripts de création et des requêtes de test.`,
     background: projet3Bg,

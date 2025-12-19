@@ -6,27 +6,27 @@ const skillsCategories = [
   {
     title: 'Langages & Programmation',
     skills: [
-      { name: 'PHP / SQL', level: 90 },
-      { name: 'JavaScript / TypeScript', level: 80 },
-      { name: 'Java / Python', level: 75 },
+      { name: 'PHP / SQL', level: 95 },
+      { name: 'JavaScript / TypeScript', level: 60 },
+      { name: 'Java / Python', level: 90 },
       { name: 'HTML / CSS', level: 95 },
-      { name: 'C / C++', level: 65 }
+      { name: 'C / C++', level: 45 }
     ]
   },
   {
     title: 'Outils & Méthodes',
     skills: [
-      { name: 'Git / GitHub', level: 85 },
+      { name: 'Git / GitHub', level: 90 },
       { name: 'Figma (Ergonomie)', level: 80 },
-      { name: 'Méthode SCRUM', level: 90 },
-      { name: 'Oracle / PostgreSQL', level: 75 }
+      { name: 'Méthode SCRUM', level: 95 },
+      { name: 'Oracle / PostgreSQL', level: 90 }
     ]
   }
 ]
 
 const languages = [
   { name: 'Français (Maternel)', level: 100 },
-  { name: 'Anglais', level: 75 },
+  { name: 'Anglais', level: 65 },
   { name: 'Espagnol', level: 60 }
 ]
 </script>
