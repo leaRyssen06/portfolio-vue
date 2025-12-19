@@ -7,55 +7,43 @@ const route = useRoute()
 </script>
 
 <template>
-  <div
-    class= "app"
-    :class="{'home-bg' : route.path === '/'}"
-  >
+  <div class="app-container">
     <Header />
 
-    <router-view />
+    <main>
+      <router-view />
+    </main>
 
     <Footer />
   </div>
 </template>
 
 <style>
-.app {
-  min-height: 100vh;
-  color: white;
-}
+/* Reset global pour éviter les marges blanches */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
 }
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif; /* Une police plus moderne si possible */
+  -webkit-font-smoothing: antialiased;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
-  padding: 2rem;
+  flex: 1; /* Permet au footer de rester en bas si la page est courte */
 }
-.home-bg {
-  background-image: url('@/assets/img/fondFinal.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.home-bg::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.8)
-  );
-  z-index: -1;
-}
+
 header {
-  padding: 1rem 2rem;
   position: relative;
-  z-index: 10;
+  z-index: 100; /* Toujours au dessus du fond fixe */
 }
 </style>

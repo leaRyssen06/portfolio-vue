@@ -3,6 +3,8 @@ defineOptions({
   name: 'HomeView'
 })
 import { useRouter } from 'vue-router'
+// Import direct de l'image pour garantir que le chemin est trouvé par le projet
+import backgroundUrl from '@/assets/img/fondFinal.png'
 
 const router = useRouter()
 
@@ -12,439 +14,328 @@ function goToProjects() {
 </script>
 
 <template>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="@/assets/img/IMG_1137.JPG"
-           alt="Photo de Léa RYSSEN"
-           class="hero-avatar"
-      />
+  <div class="home-page">
+    <div
+      class="fixed-background"
+      :style="{ backgroundImage: `url(${backgroundUrl})` }"
+    ></div>
 
-      <h1>Léa RYSSEN</h1>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="avatar-container">
+          <img src="@/assets/img/IMG_1137.JPG"
+               alt="Photo de Léa RYSSEN"
+               class="hero-avatar"
+          />
+        </div>
 
-      <p class="hero-subtitle">
-        Étudiant en BUT Informatique, passionné par le développement
-        d'applications et les projets collaboratifs.
-      </p>
+        <h1 class="glow-text">Léa RYSSEN</h1>
 
-      <div class="hero-actions">
-        <a href="/src/assets/pdf/CVLeaRYSSEN.pdf" download class="btn primary">
-          Télécharger mon CV
-        </a>
-        <a href="https://github.com/leaRyssen06" class="btn">
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/l%C3%A9a-ryssen-54263834b/" class="btn">
-          LinkedIn
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRANSITION -->
-  <div class="hero-transition"></div>
-
-  <!-- PARCOURS / PROJETS-PRO -->
-  <section class="about">
-    <h2>Parcours</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Baccalauréat</h3>
-        <p>
-          Baccalauréat général avec spécialité …
-          Découverte de l’informatique et des bases de la programmation.
+        <p class="hero-subtitle">
+          Étudiante en BUT Informatique, passionnée par le développement
+          d'applications et les projets collaboratifs.
         </p>
+
+        <div class="hero-actions">
+          <a href="/src/assets/pdf/CVLeaRYSSEN.pdf" download class="btn primary">
+            Télécharger mon CV
+          </a>
+          <a href="https://github.com/leaRyssen06" target="_blank" class="btn">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/l%C3%A9a-ryssen-54263834b/" target="_blank" class="btn">
+            LinkedIn
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>BUT Informatique</h3>
-        <p>
-          Formation axée sur le développement, les systèmes et le travail en équipe.
-          Réalisation de projets SAÉ et hackathons.
-        </p>
+    <section class="about section-spacing">
+      <h2 class="section-title">Mon Parcours</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Baccalauréat</h3>
+          <p>Baccalauréat général avec mention. Découverte de l’informatique et des bases de la programmation au Lycée Jean Moulin.</p>
+        </div>
+
+        <div class="card">
+          <h3>BUT Informatique</h3>
+          <p>Formation à l'IUT de Montpellier axée sur le développement, les systèmes et le travail en équipe. Réalisation de projets SAÉ.</p>
+        </div>
+
+        <div class="card">
+          <h3>Projet professionnel</h3>
+          <p>Objectif : devenir développeuse d’applications. Poursuite d'études en alternance pour allier théorie et pratique.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Projet professionnel</h3>
-        <p>
-          Objectif : devenir développeuse d’applications / web.
-          Poursuite possible en école d’ingénieur ou master.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section class="skills section-spacing">
+      <h2 class="section-title">Compétences</h2>
 
-  <!-- COMPETENCES -->
-  <section class="skills">
-    <h2>Compétences</h2>
-
-    <div class="skills-grid">
-
-      <!-- TECHNIQUES -->
-      <div class="skill-card">
-        <h3>Techniques</h3>
-
-        <div class="skill">
-          <span>HTML / CSS</span>
-          <div class="bar">
-            <div class="level" style="width: 80%"></div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Techniques</h3>
+          <div class="skill-group">
+            <div class="skill">
+              <div class="skill-info"><span>HTML / CSS</span><span>80%</span></div>
+              <div class="bar"><div class="level" style="width: 80%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-info"><span>JavaScript</span><span>65%</span></div>
+              <div class="bar"><div class="level" style="width: 65%"></div></div>
+            </div>
+          </div>
+          <div class="tags-container">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Git</span>
+            <span class="tag">SQL</span>
+            <span class="tag">PHP</span>
           </div>
         </div>
 
-        <div class="skill">
-          <span>JavaScript</span>
-          <div class="bar">
-            <div class="level" style="width: 65%"></div>
+        <div class="skill-card">
+          <h3>Humaines</h3>
+          <div class="skill-group">
+            <div class="skill">
+              <div class="skill-info"><span>Travail d’équipe</span><span>85%</span></div>
+              <div class="bar"><div class="level" style="width: 85%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-info"><span>Communication</span><span>70%</span></div>
+              <div class="bar"><div class="level" style="width: 70%"></div></div>
+            </div>
           </div>
-        </div>
-
-        <div class="tags">
-          <span class="tag">Vue.js</span>
-          <span class="tag">Git</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">SQL</span>
+          <div class="tags-container">
+            <span class="tag">Autonomie</span>
+            <span class="tag">Organisation</span>
+            <span class="tag">Rigueur</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- HUMAINES -->
-      <div class="skill-card">
-        <h3>Humaines</h3>
-
-        <div class="skill">
-          <span>Travail d’équipe</span>
-          <div class="bar">
-            <div class="level" style="width: 85%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Communication</span>
-          <div class="bar">
-            <div class="level" style="width: 70%"></div>
-          </div>
-        </div>
-
-        <div class="tags">
-          <span class="tag">Autonomie</span>
-          <span class="tag">Organisation</span>
-          <span class="tag">Adaptabilité</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJETS -->
-  <section class="projects-cta">
-    <h2>Mes réalisations</h2>
-
-    <p>
-      Découvrez une sélection de projets réalisés durant mon BUT Informatique
-      et en dehors du cadre académique.
-    </p>
-
-    <router-link to="/projets" class="cta-button">
-      Voir mes projets
-    </router-link>
-
-    <div class="scroll-indicator" @click="goToProjects">
-      ↓
-    </div>
-  </section>
+    <section class="projects-cta">
+      <h2 class="glow-text">Mes réalisations</h2>
+      <p>Découvrez une sélection de projets réalisés durant mon cursus.</p>
+      <router-link to="/projets" class="cta-button">Voir mes projets</router-link>
+      <div class="scroll-down" @click="goToProjects">↓</div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
+.home-page {
+  position: relative;
+  color: white;
+  background: transparent; /* Fond transparent pour voir le fixed-background */
+}
+
+/* FOND FIXE GLOBAL */
+.fixed-background {
+  position: fixed;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -2; /* Derrière tout le contenu */
+}
+
+/* Overlay sombre pour la lisibilité */
+.fixed-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 15, 0.6); /* Ajuste l'opacité ici si c'est trop sombre */
+}
+
+.section-spacing {
+  padding: 10rem 10%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #7dd3fc;
+  text-align: center;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero-content {
-  max-width: 700px;
-  padding: 4rem;
+.avatar-container {
+  animation: float 6s ease-in-out infinite;
+  margin-bottom: 2.5rem;
 }
 
 .hero-avatar {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
-
-  border: 3px solid rgba(255, 255, 255, 0.6);
-
-  /* ✨ LUEUR BLANC → BLEU */
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.6),
-    0 0 25px rgba(125, 211, 252, 0.6),
-    0 0 50px rgba(56, 189, 248, 0.4);
-
-  transition: box-shadow 0.4s ease;
+  border: 4px solid rgba(125, 211, 252, 0.4);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.3);
 }
 
-.hero-transition {
-  height: 220px;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0) 0%,
-    rgba(10, 10, 20, 0.9) 80%
-  );
-}
-
-.about {
-  background: rgba(10, 10, 20, 0.9);
-  backdrop-filter: blur(6px);
-
-  padding: 5rem 4rem;
-  color: white;
-}
-
-.about h2 {
-  margin-top: 0;
-  font-size: 2rem;
-  color: #7dd3fc;
-}
-
-.about ul {
-  padding-left: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-.about li {
-  margin-bottom: 0.5rem;
-}
-
-.about p {
-  max-width: 700px;
-  line-height: 1.7;
-}
-
-h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-h1 span {
-  color: #7dd3fc; /* bleu clair élégant */
+.glow-text {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  background: linear-gradient(to right, #fff, #7dd3fc, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(125, 211, 252, 0.5));
 }
 
 .hero-subtitle {
-  margin: 1.5rem 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  max-width: 750px;
+  margin: 2rem auto 3.5rem;
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  line-height: 1.8;
 }
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-/* Boutons */
+/* BOUTONS STYLE SPACE */
 .btn {
-  padding: 0.7rem 1.4rem;
-  border-radius: 30px;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
   text-decoration: none;
   color: white;
-  border: 1px solid white;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
 .btn:hover {
   background: white;
-  color: black;
+  color: #05050a;
+  transform: translateY(-5px);
 }
 
 .btn.primary {
-  background: #7dd3fc;
-  color: black;
   border-color: #7dd3fc;
+  color: #7dd3fc;
 }
 
-.btn.primary:hover {
-  background: white;
-  border-color: white;
-}
-
+/* CARTES GLASSMORPHISME */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-
-  padding: 2rem;
-  color: white;
-
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 25px;
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 0 30px rgba(125, 211, 252, 0.25),
-    0 30px 60px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px);
+  border-color: #7dd3fc;
 }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #7dd3fc;
-  font-size: 1.3rem;
-}
-
-.card p {
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.skills {
-  background: rgba(10, 10, 20, 0.9);
-  backdrop-filter: blur(6px);
-  padding: 5rem 4rem;
-}
-
-.skills h2 {
-  margin-top: 0;
-  font-size: 2rem;
-  color: #7dd3fc;
-}
-
+/* SKILLS */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 3rem;
-  margin-top: 3rem;
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  padding: 3rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.skill-card h3 {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  color: #7dd3fc;
-  font-size: 1.4rem;
-}
-
-.skill {
-  margin-bottom: 1.5rem;
-}
-
-.skill span {
-  font-size: 0.9rem;
-}
-
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 0.8rem; }
 .bar {
   height: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .level {
   height: 100%;
-  background: linear-gradient(90deg, #7dd3fc, #38bdf8);
-  border-radius: 4px;
+  background: linear-gradient(90deg, #38bdf8, #7dd3fc);
 }
 
-.tags {
-  margin-top: 1.5rem;
+.tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  margin-top: 2rem;
 }
 
 .tag {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  background: rgba(125, 211, 252, 0.15);
-  border: 1px solid rgba(125, 211, 252, 0.4);
-  color: #7dd3fc;
+  background: rgba(125, 211, 252, 0.1);
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
 }
 
+/* CTA */
 .projects-cta {
-  position: relative;
-  min-height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  padding: 10rem 2rem;
   text-align: center;
-  color: white;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 20, 0.9),
-    rgba(10, 10, 20, 1)
-  );
-
-  padding: 4rem 2rem;
-}
-
-.projects-cta h2 {
-  font-size: 2.4rem;
-  color: #7dd3fc;
-  margin-bottom: 1rem;
-}
-
-.projects-cta p {
-  max-width: 600px;
-  line-height: 1.7;
-  margin-bottom: 3rem;
 }
 
 .cta-button {
-  padding: 0.9rem 2.2rem;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #38bdf8, #7dd3fc);
-  color: #0a0a14;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  background: #38bdf8;
+  color: #05050a;
+  border-radius: 50px;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 600;
-
-  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .cta-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-
+.scroll-down {
+  margin-top: 3rem;
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.6);
-
+  opacity: 0.5;
+  animation: bounce 2s infinite;
   cursor: pointer;
-  animation: bounce 1.8s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+}
+
+@media (max-width: 768px) {
+  .section-spacing { padding: 5rem 5%; }
 }
 </style>
-
