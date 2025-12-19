@@ -36,7 +36,7 @@ function goToProjects() {
         </p>
 
         <div class="hero-actions">
-          <a href="/src/assets/pdf/CVLeaRYSSEN.pdf" download class="btn primary">
+          <a href="./CVLeaRYSSEN.pdf" download class="btn primary">
             Télécharger mon CV
           </a>
           <a href="https://github.com/leaRyssen06" target="_blank" class="btn">
