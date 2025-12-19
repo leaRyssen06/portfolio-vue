@@ -12,21 +12,55 @@ import projet2Img2 from '@/assets/img/projet2-illustration2.png'
 import projet3Img1 from '@/assets/img/projet3-illustration1.png'
 import projet3Img2 from '@/assets/img/projet3-illustration2.png'
 
+import { ref } from 'vue'
+
+const selectedImage = ref(null)
+
+function openImage(img) {
+  selectedImage.value = img
+}
+
+function closeImage() {
+  selectedImage.value = null
+}
+
+
 const route = useRoute()
 const id = route.params.id
 
 const projects = {
   projet1: {
-    title: "Projet 1 — SAÉ",
-    context: "Application développée dans le cadre du BUT Informatique, axée sur …",
-    methods: ["Git", "travail en équipe", "Kanban"],
-    results: "Captures, lien GitHub…",
-    skills: [
-      { name: "Réaliser un développement", level: 90 },
-      { name: "Conduire un projet", level: 75 },
-      { name: "Git", level: 85 }
+    title: "SAÉ 3A - Projet de sit web de démocratie participative",
+    subtitle: 'Développement d’un site web full stack avec système de vote',
+    context: `Ce projet consistait à répondre à la demande d’un client fictif souhaitant
+              un site web de démocratie participative. L’objectif était de concevoir une
+              plateforme permettant aux utilisateurs de s’exprimer, de proposer des idées
+              et de participer à des votes structurés, dans un cadre sécurisé et fiable.
+              Le projet a été réalisé en équipe de quatre dans le cadre du BUT Informatique.`,
+    methods: [
+      'Travail en équipe (4 personnes)',
+      'Méthode agile Scrum',
+      'Rôle de Scrum Master (4 sprints sur 5)',
+      'Architecture MVC',
+      'Gestion de version avec Git'
     ],
-    contribution: "Développement des fonctionnalités X et Y.",
+    results: `Le projet a abouti à un site web fonctionnel intégrant une authentification
+              complète avec gestion des mots de passe et vérification par email.
+              Les utilisateurs peuvent créer des questions, proposer des réponses,
+              voter selon deux systèmes distincts (jugement majoritaire et vote australien),
+              et consulter les résultats publiés.`,
+    skills: [
+      { name: 'Développement web full stack', level: 85 },
+      { name: 'Architecture MVC', level: 80 },
+      { name: 'Gestion de base de données', level: 80 },
+      { name: 'Méthodes agiles (Scrum)', level: 75 },
+      { name: 'Travail en équipe', level: 85 }
+    ],
+    contribution: `J’ai réalisé environ 40 % du développement du projet, en intervenant
+                  principalement sur la logique applicative, l’authentification des utilisateurs
+                  et l’interaction avec la base de données. En parallèle, j’ai assuré le rôle
+                  de Scrum Master sur 4 sprints sur 5, en organisant les réunions, le suivi
+                  des tâches et la coordination de l’équipe.`,
     background: projet1Bg,
     images: [
       projet1Img1,
@@ -34,16 +68,33 @@ const projects = {
     ]
   },
   projet2: {
-    title: "Projet 2 — Hackathon",
-    context: "Projet réalisé lors de la Nuit de l’Info, en équipe, sous contraintes de temps.",
-    methods: ["Git", "travail en équipe", "Kanban"],
-    results: "Captures, lien GitHub…",
-    skills: [
-      { name: "Réaliser un développement", level: 90 },
-      { name: "Conduire un projet", level: 75 },
-      { name: "Git", level: 85 }
+    title: 'SAE 2.01 — Pokémon TCG',
+    subtitle: 'Développement d’un jeu de cartes en Java',
+    context: `Cette SAE avait pour objectif de concevoir une application complète
+              reproduisant les mécaniques d’un jeu de cartes de type TCG.
+              Le projet s’est déroulé sur plusieurs semaines et a été réalisé en binôme
+              dans le cadre du BUT Informatique (semestre 2).`,
+    methods: [
+      'Programmation orientée objet (Java)',
+      'Séparation logique métier / interface',
+      'Travail en binôme',
+      'Gestion de version avec Git',
+      'Conception d’interface avec JavaFX'
     ],
-    contribution: "Développement des fonctionnalités X et Y.",
+    results:  `Le projet a abouti à une application fonctionnelle intégrant les règles
+              principales du jeu Pokémon TCG ainsi qu’une interface graphique claire
+              et interactive. Le code est structuré de manière modulaire et documentée,
+              facilitant son évolution et sa maintenance.`,
+    skills: [
+      { name: 'Développement applicatif', level: 85 },
+      { name: 'Programmation orientée objet', level: 80 },
+      { name: 'Architecture logicielle', level: 75 },
+      { name: 'Travail en équipe', level: 70 }
+    ],
+    contribution: `J’ai principalement travaillé sur la logique du jeu, l’architecture
+                  générale de l’application et la mise en place de plusieurs fonctionnalités
+                  clés. J’ai également participé à la conception de l’interface graphique
+                  et à l’organisation du travail en binôme.`,
     background: projet2Bg,
     images: [
       projet2Img1,
@@ -51,16 +102,31 @@ const projects = {
     ]
   },
   projet3: {
-    title: "Projet 3 — Personnel",
-    context: "Projet personnel visant à approfondir mes compétences en …",
-    methods: ["Git", "travail en équipe", "Kanban"],
-    results: "Captures, lien GitHub…",
-    skills: [
-      { name: "Réaliser un développement", level: 90 },
-      { name: "Conduire un projet", level: 75 },
-      { name: "Git", level: 85 }
+    title: 'SAE 1.04 — Conception de base de données',
+    subtitle: 'Modélisation et implémentation sous Oracle',
+    context: `Cette SAE avait pour but de concevoir une base de données relationnelle
+              à partir d’un cahier des charges. Le projet s’inscrit dans le cadre
+              du BUT Informatique (semestre 1) et visait à comprendre les différentes
+              étapes de conception d’une base de données fiable.`,
+    methods: [
+      'Analyse du besoin fonctionnel',
+      'Modélisation entité-association',
+      'Transformation en schéma relationnel',
+      'Création et test des tables SQL',
+      'Utilisation d’Oracle'
     ],
-    contribution: "Développement des fonctionnalités X et Y.",
+    results: `Le projet a permis de produire une base de données cohérente et fonctionnelle,
+              respectant les contraintes du cahier des charges. Les tables ont été testées
+              à l’aide de requêtes SQL afin de valider l’intégrité et la pertinence du modèle.`,
+    skills: [
+      { name: 'Modélisation de données', level: 85 },
+      { name: 'SQL', level: 80 },
+      { name: 'Analyse de besoins', level: 70 },
+      { name: 'Rigueur et organisation', level: 75 }
+    ],
+    contribution: `J’ai réalisé l’intégralité de la modélisation de la base de données,
+                  depuis le schéma entité-association jusqu’à l’implémentation SQL.
+                  J’ai également effectué les tests et vérifié la cohérence des données.`,
     background: projet3Bg,
     images: [
       projet3Img1,
@@ -137,9 +203,17 @@ const project = projects[id]
             :key="index"
             :src="img"
             :alt="`Illustration ${index + 1}`"
+            @click="openImage(img)"
           />
         </div>
       </div>
+
+      <!-- Lightbox -->
+      <div v-if="selectedImage" class="lightbox" @click.self="closeImage">
+        <button class="close-btn" @click="closeImage">&times;</button>
+        <img :src="selectedImage" alt="Image vue en grand" />
+      </div>
+
 
     </div>
   </section>
@@ -148,10 +222,6 @@ const project = projects[id]
 </template>
 
 <style scoped>
-.illustrations {
-  margin-top: 2rem;
-}
-
 .images-container {
   display: flex;
   gap: 1rem;
@@ -390,6 +460,42 @@ const project = projects[id]
 .images-container img:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 70vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-btn:hover {
+  color: #fbbf24; /* un jaune pour le hover */
 }
 
 </style>

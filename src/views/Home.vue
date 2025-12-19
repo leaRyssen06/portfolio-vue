@@ -166,12 +166,21 @@ function goToProjects() {
 }
 
 .hero-avatar {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
+
   border: 3px solid rgba(255, 255, 255, 0.6);
+
+  /* ✨ LUEUR BLANC → BLEU */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 25px rgba(125, 211, 252, 0.6),
+    0 0 50px rgba(56, 189, 248, 0.4);
+
+  transition: box-shadow 0.4s ease;
 }
 
 .hero-transition {

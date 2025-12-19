@@ -9,10 +9,9 @@ defineOptions({
     <!-- PROJET 1 -->
     <section class="project project-1">
       <div class="content">
-        <h2>Projet 1 — SAÉ</h2>
+        <h2>SAÉ 3A - Site web de démocratie participative</h2>
         <p>
-          Application développée dans le cadre du BUT Informatique,
-          axée sur …
+          Projet de site web de démocratie participative, développé en équipe avec authentification, base de données et systèmes de vote (jugement majoritaire et vote australien), dans le cadre du BUT Informatique.
         </p>
         <router-link to="/projets/projet1" class="project-btn">
           Voir le projet
@@ -23,10 +22,9 @@ defineOptions({
     <!-- PROJET 2 -->
     <section class="project project-2">
       <div class="content">
-        <h2>Projet 2 — Hackathon</h2>
+        <h2>SAÉ 2.01 - Pokémon TCG</h2>
         <p>
-          Projet réalisé lors de la Nuit de l’Info,
-          en équipe, sous contraintes de temps.
+          Développement d’un jeu de cartes Pokémon TCG en Java, intégrant les règles principales du jeu et une interface graphique interactive, réalisé en binôme dans le cadre du BUT Informatique.
         </p>
         <router-link to="/projets/projet2" class="project-btn">
           Voir le projet
@@ -37,9 +35,9 @@ defineOptions({
     <!-- PROJET 3 -->
     <section class="project project-3">
       <div class="content">
-        <h2>Projet 3 — Personnel</h2>
+        <h2>SAÉ 1.04 - Conception de base de données</h2>
         <p>
-          Projet personnel visant à approfondir mes compétences en …
+          Conception et implémentation d’une base de données relationnelle, depuis l’analyse du besoin jusqu’à la création des tables SQL, dans le cadre du BUT Informatique.
         </p>
         <router-link to="/projets/projet3" class="project-btn">
           Voir le projet
